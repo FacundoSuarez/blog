@@ -5,6 +5,7 @@
  */
 package com.blog.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -39,6 +40,7 @@ public class Rol implements Serializable {
     @Column(name = "description")
     private String description;
     @ManyToMany(mappedBy = "rolList")
+    @JsonIgnore
     private List<Author> authorList;
 
     public Rol() {
